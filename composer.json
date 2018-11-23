@@ -1,0 +1,27 @@
+{
+    "name": "phalapi/cors",
+    "description": "PhalApi 2.x 扩展类库 - 跨域",
+    "keywords": [
+        "phalapi", "phalapi-cors", "cors"
+    ],
+    "license": "GPL-3.0+",
+    "homepage": "https://www.phalapi.net/",
+    "type": "library",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "dogstar huang",
+            "email": "chanzonghuang@gmail.com",
+            "homepage": "http://my.oschina.net/dogstar",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhalApi\\CORS\\": "src"
+        }
+    } 
+}
