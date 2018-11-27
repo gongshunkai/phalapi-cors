@@ -27,7 +27,5 @@
 在/path/to/phalapi/config/di.php文件中，注册：  
 ```php
 
-$di->cors = function() {
-	return new \PhalApi\CORS\Lite();
-};
+$di->cors = new \PhalApi\CORS\Lite();
 ```
