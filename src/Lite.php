@@ -17,7 +17,7 @@ class Lite {
     );
 
     protected $flag = false;
-    
+
     public function __construct() {
         if(\PhalApi\DI()->config->get('app.cors'))
             $this->config = array_merge($this->config, \PhalApi\DI()->config->get('app.cors'));
@@ -33,10 +33,11 @@ class Lite {
         if($this->flag){
 
             $this->config['headers']['Access-Control-Allow-Origin'] = $origin;
-            $this->config['headers']['Access-Control-Allow-Headers'] = 'Content-Type';
+            $this->config['headers']['Access-Control-Allow-Headers'] = $this->config['headers']['Access-Control-Allow-Headers'] ? $this->config['headers']['Access-Control-Allow-Headers'] : 'Content-Type';
 
             foreach ($this->config['headers'] as $key => $val) {
                  \PhalApi\DI()->response->addHeaders($key,$val);
+                @header($key . ': ' . $val);
             }
         }
     }
